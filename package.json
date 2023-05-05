@@ -9,9 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "13.1.4",
+    "@chakra-ui/icons": "^2.0.19",
+    "@chakra-ui/react": "^2.5.5",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@nhost/nextjs": "^1.13.20",
+    "formik": "^2.2.9",
+    "framer-motion": "^10.11.6",
+    "graphql": "^16.6.0",
+    "next": "13.4.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "yup": "^1.1.0"
   },
   "devDependencies": {
     "@types/node": "18.11.18",
