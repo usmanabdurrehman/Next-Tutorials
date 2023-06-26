@@ -7,7 +7,7 @@ function sleep(ms: number) {
 }
 const getData = async () => {
   const data: Pokemon[] = [];
-  const pokemonNames = ["pikachu", "jigglypuff", "charizard", "clefairy"];
+  const pokemonNames = ["pikachu", "jigglypuff", "marill", "clefairy"];
   for (let i = 0; i < pokemonNames.length; i++) {
     const name = pokemonNames[i];
 

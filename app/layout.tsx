@@ -10,7 +10,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // Create a client
   return (
     <html lang="en">
       <body style={{ margin: 0, padding: 0 }}>

@@ -3,7 +3,7 @@
 import { Flex } from "@chakra-ui/react";
 import React from "react";
 
-export default function LocalLoader() {
+export default function Loader() {
   return (
     <Flex alignItems={"center"} justifyContent="center" height="600px">
       <img
