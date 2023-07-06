@@ -3,6 +3,8 @@
 import React from "react";
 import {
   Badge,
+  Box,
+  Button,
   Card,
   CardBody,
   Flex,
@@ -14,6 +16,8 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { Pokemon } from "./types";
+import { useQuery } from "@tanstack/react-query";
+import { getPokemons } from "./getPokemons";
 
 const TYPE_COLOR_MAP: any = {
   normal: "gray",
@@ -67,15 +71,20 @@ function PokemonCard({ pokemon }: { pokemon: Pokemon }) {
   );
 }
 
-export function Pokemons({ pokemons }: { pokemons: Pokemon[] | undefined }) {
+export function Pokemons() {
+  const { data: pokemons, refetch } = useQuery(["GET_POKEMONS"], getPokemons);
   return (
     <div>
+      <Text align={"center"} fontSize={"3xl"}>
+        Pokemon list
+      </Text>
+      <Button onClick={() => refetch()}>Refetch Pokemons</Button>
       <Grid
         templateColumns={"repeat( auto-fill, minmax(400px, 1fr) )"}
         mt={4}
         gap={4}
       >
-        {pokemons?.map((pokemon: Pokemon, index) => (
+        {pokemons?.map((pokemon: Pokemon) => (
           <GridItem key={pokemon.id} w="100%">
             <PokemonCard pokemon={pokemon} />
           </GridItem>

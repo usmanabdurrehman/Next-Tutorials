@@ -4,6 +4,7 @@ export const metadata = {
 };
 
 import ChakraWrapper from "./ChakraWrapper";
+import TanstackQueryWrapper from "./TanstackQueryWrapper";
 
 export default function RootLayout({
   children,
@@ -14,7 +15,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ margin: 0, padding: 0 }}>
-        <ChakraWrapper>{children}</ChakraWrapper>
+        <TanstackQueryWrapper>
+          <ChakraWrapper>{children}</ChakraWrapper>
+        </TanstackQueryWrapper>
       </body>
     </html>
   );
