@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { Pokemon } from "./types";
 import { useQuery } from "@tanstack/react-query";
-import { getPokemons } from "./getPokemons";
+import { GET_POKEMONS_KEY, getPokemons } from "./getPokemons";
 
 const TYPE_COLOR_MAP: any = {
   normal: "gray",
@@ -71,8 +71,8 @@ function PokemonCard({ pokemon }: { pokemon: Pokemon }) {
   );
 }
 
-export function Pokemons() {
-  const { data: pokemons, refetch } = useQuery(["GET_POKEMONS"], getPokemons);
+export function Pokemons({ pokemons: initialData }: { pokemons?: Pokemon[] }) {
+  const { data: pokemons, refetch } = useQuery(GET_POKEMONS_KEY, getPokemons);
   return (
     <div>
       <Text align={"center"} fontSize={"3xl"}>

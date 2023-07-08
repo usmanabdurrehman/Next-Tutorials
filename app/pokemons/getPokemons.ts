@@ -12,7 +12,6 @@ export const getPokemons = async () => {
 
     const res: any = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
     const pokemonDetail = await res.json();
-    console.log("Query completed for" + name);
     await sleep(500);
     const pokemon: Pokemon = {
       id: pokemonDetail?.id,
@@ -26,5 +25,9 @@ export const getPokemons = async () => {
     };
     data.push(pokemon);
   }
+
+  console.log("Query Completed");
   return data;
 };
+
+export const GET_POKEMONS_KEY = ["GET_POKEMONS"];
