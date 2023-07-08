@@ -1,14 +1,13 @@
-"use client";
 import React from "react";
 
-export const revalidate = 3000;
-
 const getPosts = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
-    cache: "force-cache",
-    next: { revalidate: 3000 },
+  const res = await fetch(`https://hub.dummyapis.com/delay?seconds=5`, {
+    // cache: "force-cache",
   });
-  return res.json();
+  const payload = await res.text();
+  // console.log({ payload });
+  console.log("Query is running");
+  return payload;
 };
 
 export default async function Home() {
